@@ -1,11 +1,11 @@
 <?php
 /*
- * Plugin Name:   RSS Feed Improvements
+ * Plugin Name:   RSS Feed Featured Image
  * Plugin URI:    http://www.utc.edu/
- * Description:   A plugin to customize the default RSS Feed to add media thumbnails and enclosures
- * Version:	      1.3.2
+ * Description:   A plugin to customize the default RSS Feed to add media enclosures for featured image
+ * Version:	  1.3.2
  * Author:        Chris Gilligan
- * Author URI:    http://chrisgilligan.com/
+ * Author URI:    https://chrisgilligan.com/
  */
 ?>
 <?php
