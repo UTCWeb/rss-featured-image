@@ -27,10 +27,10 @@ add_filter( 'rss2_item', 'rssimproved_attached_images' );
 function rssimproved_attached_images() {
     global $post;
 
-    // if no in-post attachments, but post has a featured image
+    // if post has a featured image, full size featured image
     if ( get_the_post_thumbnail() ): ?>
 
-            <media:content url="<?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large'); echo $image[0]; ?>" />
+            <media:content url="<?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full'); echo $image[0]; ?>" />
 
     <?php endif;
 
@@ -42,7 +42,7 @@ function rssimproved_attached_images() {
         'post_parent' => $post->ID
     ) );
 
-    // if post has attachments, construct and output RSS media nodes;
+    // if post has image attachments, construct and output all as RSS media:content nodes;
     if ( $attachments ) {
         foreach ( $attachments as $att ) {
             $img_attr = wp_get_attachment_image_src( $att->ID, 'full' );
@@ -56,12 +56,10 @@ function rssimproved_attached_images() {
         }
     }
 
-    // if post has no attachments and no featured image: set a static placeholder images
+    // if post has no attachments and no featured image: set a static placeholder image, UTC Memorial Gate
     if ( !get_the_post_thumbnail() ): ?>
 
-        <media:content url="https://www.utc.edu/sites/default/files/static-assets/logos/utc-power-c-for-dark-bg-with-padding-20210325a.svg">
-            <media:description type="plain"><![CDATA[<?php echo $att->post_title; ?>]]></media:description>
-        </media:content>
+        <media:content url="https://www.utc.edu/sites/default/files/2021-11/utc-memorial-gate.jpg" />
 
     <?php endif;
 }
