@@ -3,7 +3,7 @@
  * Plugin Name:   RSS Feed Featured Image
  * Plugin URI:    http://www.utc.edu/
  * Description:   A plugin to customize the default RSS Feed to add media enclosures for featured image
- * Version:	  1.3.2
+ * Version:	  1.3.3
  * Author:        Chris Gilligan
  * Author URI:    https://chrisgilligan.com/
  */
