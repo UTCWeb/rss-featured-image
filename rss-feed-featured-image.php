@@ -19,6 +19,7 @@ function rssimproved_namespace() {
 add_filter( 'the_content_feed', 'rssimproved_content', 1000, 1 );
 
 function rssimproved_content() {
+    $excerpt = get_the_excerpt();
     return $excerpt;
 }
 // include media content and featured image in RSS
